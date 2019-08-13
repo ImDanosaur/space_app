@@ -1,0 +1,13 @@
+<h1>Planets</h1>
+
+<div>
+    <% @ordered_planets.each do |planet| %>
+        <h3>Position: <%= planet.position %></h3>
+        <p>Name: <%= link_to planet.name, planet_path(planet) %></p>
+        <p>Galaxy: <%= planet.galaxy.name %></p>
+        <p>Info: <%= planet.info %></p>
+        <p><%= "Has Rings!" if planet.has_rings %></p>
+    <% end %>
+</div>
+
+<%= link_to "Create new Planet", new_planet_path %>

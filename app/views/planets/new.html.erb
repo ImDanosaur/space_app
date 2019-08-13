@@ -1,0 +1,13 @@
+<h1>New Planet</h1>
+<% if @planet.errors.any? %>
+    <%= "Error!" %>
+<% end %>
+<%= form_for @planet do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :info %>
+    <%= f.text_area :info %>
+    <%= f.label :galaxy %>
+    <%= f.collection_select :galaxy_id, Galaxy.all, :id, :name %>
+    <%= f.submit "Add the Planet" %>
+<% end %>
